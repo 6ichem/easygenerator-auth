@@ -10,12 +10,12 @@ export class AuthController {
   @Post('register')
   async register(@Body(new ValidationPipe()) registerUserDto: CreateUserDto) {
     await this.authService.register(registerUserDto);
-    return { message: 'Registration successful' };
+    return { message: 'Registration successful', success: true };
   }
 
   @Post('login')
   async login(@Body(new ValidationPipe()) loginUserDto: LoginUserDto) {
-    const token = await this.authService.login(loginUserDto);
-    return { token };
+    const { access_token } = await this.authService.login(loginUserDto);
+    return { access_token, success: true };
   }
 }
