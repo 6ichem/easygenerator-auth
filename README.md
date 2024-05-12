@@ -2,7 +2,7 @@
 
 This project implements a user authentication module for a web application, allowing users to sign up and sign in. It consists of both front-end and back-end components.
 
-[Live Demo](https://pages.github.com/)
+[Live Demo](https://easygenerator-auth.vercel.app)
 
 ## Features
 
