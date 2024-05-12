@@ -14,7 +14,7 @@ export const Register = async (payload: RegisterPayload) => {
   return data;
 };
 
-export const GetUser = async () => {
+export const FetchUser = async () => {
   const { data } = await httpClient.get("/users", {
     headers: { Authorization: `Bearer ${getAuthToken()}` },
   });

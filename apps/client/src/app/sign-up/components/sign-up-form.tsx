@@ -18,6 +18,7 @@ export default function SignUpForm() {
 
   const [signUpForm, setSignUpForm] = useState(SIGN_UP_FIELDS);
   const [formErrors, setFormErrors] = useState<string[]>([]);
+  const [isLoading, setLoading] = useState(false);
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormErrors([]);
@@ -57,12 +58,15 @@ export default function SignUpForm() {
   };
 
   const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
     const validationErrors = validateUser(signUpForm);
     if (validationErrors.length === 0) {
       await LoginUser();
+      setLoading(false);
     } else {
       setFormErrors(validationErrors);
+      setLoading(false);
     }
   };
 
@@ -99,7 +103,12 @@ export default function SignUpForm() {
           onChange={(e) => handleFormChange(e)}
         />
       </div>
-      <Button className="w-full" type="submit" disabled={!isFormValid()}>
+      <Button
+        className="w-full"
+        type="submit"
+        disabled={!isFormValid()}
+        loading={isLoading}
+      >
         Register
       </Button>
     </form>

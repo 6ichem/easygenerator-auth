@@ -9,7 +9,5 @@ export const removeAuthToken = () => localStorage.removeItem(AUTH_TOKEN);
 
 export const logOut = () => {
   removeAuthToken();
-  setTimeout(() => {
-    window.location.reload();
-  }, 1500);
+  window.location.reload();
 };
