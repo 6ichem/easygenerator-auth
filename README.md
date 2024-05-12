@@ -2,6 +2,8 @@
 
 This project implements a user authentication module for a web application, allowing users to sign up and sign in. It consists of both front-end and back-end components.
 
+[Live Demo](https://pages.github.com/)
+
 ## Features
 
 - Monorepo architecture using Turborepo
@@ -31,6 +33,7 @@ The server-side of the application is built using NestJS, a framework for buildi
 
 1. Clone the repository: `git clone https://github.com/6ichem/easygenerator-auth.git`
 2. Install dependencies: `npm install`
+3. Set up environment variables (DATABASE_URL, PORT and JWT_SECRET) in root directory
 4. Start the server: `npm run start`
 5. Access the application at `http://localhost:3000`
 
