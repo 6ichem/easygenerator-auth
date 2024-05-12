@@ -13,7 +13,7 @@ export class AuthenticatedGuard extends AuthGuard('jwt') {
     }
 
     if (err || !user) {
-      throw new UnauthorizedException(err);
+      throw new UnauthorizedException('INVALID_TOKEN');
     }
 
     return user;

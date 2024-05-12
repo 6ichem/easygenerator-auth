@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "github": {
+    "enabled": true
+  },
+  "builds": [
+    {
+      "src": "/apps/server/dist/main.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/apps/client/dist/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/apps/server/dist/main.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+    }
+  ]
+}
