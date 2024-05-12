@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "turbo run build",
-    "start": "node apps/server/dist/main",
-    "dev": "turbo run dev",
+    "start": "turbo run build && node apps/server/dist/main",
+    "dev": "turbo run build && turbo run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "workspaces": [
