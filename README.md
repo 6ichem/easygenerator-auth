@@ -4,6 +4,7 @@ This project implements a user authentication module for a web application, allo
 
 ## Features
 
+- Monorepo architecture using Turborepo
 - User sign up with email, name, and password
 - User sign in with email and password
 - JWT authentication implementation on both front-end and back-end
